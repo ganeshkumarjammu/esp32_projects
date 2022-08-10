@@ -45,6 +45,8 @@ html = '''<!DOCTYPE html>
 <h3> LED4 </h3>
 <button name="LED4" value='ON' type='submit'>  ON </button>
 <button name="LED4" value='OFF' type='submit'> OFF </button>
+<p>Custom range slider:</p>
+<input name="slider" type="range" min="1" max="1023" value="50" class="slider" id="myRange">
 </center>
 '''
 
@@ -89,6 +91,8 @@ while True:
 
   LED4_ON =request.find('/?LED4=ON')
   LED4_OFF =request.find('/?LED4=OFF')
+
+  servo_value = request.find('/?slider=')
 
   if(LED1_ON==6):
     LED1.value(1)
